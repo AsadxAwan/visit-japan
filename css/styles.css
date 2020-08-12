@@ -1,0 +1,1209 @@
+* {
+    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-size: 16px;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+	/*properties for removing scroll bar */   
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+/*..................................................................................... Navigation Bar and Hamburger Menu Styling ...*/
+.navbar {
+    display: flex;
+    position: fixed;
+	width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                0px 8px 13px rgba(0,0,0,0.1),
+                0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.brand-title a {
+	text-decoration: none;
+	color: white;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1.5rem;
+}
+
+.navbar-links li:hover {
+    background-color: red;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/*................................................................................................................ Basic Layout ...*/
+section {
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+}
+
+figure {
+	height: 100vh;
+	width: 50vw;
+	float: right;	
+}
+
+article {
+	height: 100vh;
+	width: 50vw;
+	float: left;
+	background-color: black;
+}
+
+
+/*........................................................................................................... Section 1 - Home ...*/
+.one {
+	height: 100vh;
+	width: 100vw;
+}
+
+.one img {
+	height: auto;
+	width: 25vw;
+	display: block;
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translateX(-50%);
+	filter: drop-shadow(0 0 50px black);
+	z-index: 9998;
+}
+
+.pattern {
+	height: 100vh;
+	width: 100vw;
+    background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAIElEQVQYV2NkYGD4zwABjFAazMAqCFMAp+FakGWwCgIAtpQCBqePTCIAAAAASUVORK5CYII=
+   ) repeat;
+	z-index: 9997;
+}
+
+/*... Explore Button ...*/
+.explore {
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translateX(-50%);	
+	background-color: red;
+	color: white;
+	border: none;
+    outline: none;
+	border-radius: 2px;
+	height: 10%;
+	width: 10%;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	filter: drop-shadow(0 0 50px black);
+	transition: 0.4s;
+}
+
+.explore:hover {
+  cursor: pointer;
+  background-color: black;
+  text-decoration: none;
+}
+
+/*. Background Video .*/
+.vid {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  z-index: -1000;
+  position: absolute;
+  top: 0;
+}
+
+/*............................................................................................................ Section 2 - Places ...*/
+.two {
+	height: 100vh;
+	width: 100vw;
+}
+
+.two main {
+	/*border: 3px dashed green;*/
+	width: 100%;
+	height: 60vh;
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.two h2 {
+	color: white;
+	text-align: center;
+}
+
+.two h2:after {
+	content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 80%; /* Change this to whatever width you want. */
+    padding-top: 5px; /* This creates some space between the element and the border. */
+    border-bottom: 5px solid red; /* This creates the border. Replace black with whatever color you want. */
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.two p {
+	color: white;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	line-height: 2rem;
+	text-align: justify;
+	padding-top: 1rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;	
+	column-count: 2;
+	column-rule: 3px solid white;
+	column-gap: 2rem;
+}
+
+/*...............................................................................Image carousel for Section 2 ...*/
+.buttons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10vh;
+  /*border: 2px solid red;*/
+  margin-top: 1.5rem;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 20px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.mySlides img {
+	height: 100vh;
+	width: 50vw;
+	object-fit: cover;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  width: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: red;
+}
+
+
+/*................................................................................ Section 2.5 - Banner 1 - Join Our Mailing List ...*/
+.banner-1 {
+	width: 100vw;
+	height: 20vh;
+	background-color: white;
+}
+
+.banner-1 h3 {
+	display: block;
+	text-align: center;
+	padding-top: 1rem;
+}
+
+.banner-1 h3:after {
+	content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 5%; /* Change this to whatever width you want. */
+    padding-top: 5px; /* This creates some space between the element and the border. */
+    border-bottom: 5px solid red; /* This creates the border. Replace black with whatever color you want. */
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.banner-1 form {
+	display: block;
+	text-align: center;
+	margin-top: 1rem;
+}
+
+/* email text field */
+input[type=text], input[type=submit] {
+  width: 20%;
+  padding: 1rem;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* subscribe byutton */
+input[type=submit] {
+  background-color: red;
+  color: white;
+  border: none;
+  margin-left: 0.75rem;
+  width: 15%;
+  display: inline-block;
+  font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+}
+
+input[type=submit]:hover {
+  background-color: black;
+  transition: 0.5s;
+}
+
+
+/*............................................................................................................. Section 3 - Events ...*/
+.three {
+	height: 100vh;
+	width: 100vw;
+	background-color: red;
+}
+
+.top {
+	display: none;
+}
+
+
+.bottom {
+	display: block;
+	width: 100vw;
+	height: 60vh;
+	/*border: 1px solid yellow;*/
+	padding-top: 20vh;
+	padding-left: 10vw;
+	padding-right: 10vw;
+}
+
+.bottom p {
+	color: white;
+	text-align: justify;
+	column-count: 3;
+	column-gap: 1rem;
+	column-rule: 1px solid black;
+}
+
+.bottom h2 {
+	text-align: inherit;
+	color: white;
+}
+
+.bottom h2:after {
+	content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    width: 10%; /* Change this to whatever width you want. */
+    padding-top: 0.6rem; /* This creates some space between the element and the border. */	
+    border-bottom: 5px solid black; /* This creates the border. Replace black with whatever color you want. */ 
+	margin-bottom: 2rem;
+}
+
+/*... polaroids section ...*/
+.polaroids {
+	width: 100vw;
+	height: 40vh;
+	border-top: 0.40rem solid black;
+	display: block;
+	text-align: center;
+}
+
+.polaroid {
+	margin-top: 0;
+	margin-left: 3rem;
+	margin-right: 3rem;
+}
+
+/*... Polaroid 1 ...*/
+.polaroid-1 {
+	transition: all 0.3s;
+    transition-timing: ease-in-out;
+	transform-origin: top center
+}
+  
+ .polaroids .polaroid-1:hover {
+    transform: rotate(-6deg);
+}
+
+/*... Polaroid 2 ...*/
+.polaroid-2 {
+    transition: all 0.3s;
+    transition-timing: ease-in-out;
+	transform-origin: top center
+}
+  
+ .polaroids .polaroid-2:hover {
+    transform: rotate(6deg);
+}
+
+/*... Polaroid 3 ...*/
+.polaroid-3 {
+    transition: all 0.3s;
+    transition-timing: ease-in-out;
+	transform-origin: top center
+}
+  
+ .polaroids .polaroid-3:hover {
+    transform: rotate(6deg);
+}
+
+/*... Polaroid 4 ...*/
+.polaroid-4 {
+    transition: all 0.3s;
+    transition-timing: ease-in-out;
+	transform-origin: top center
+}
+  
+ .polaroids .polaroid-4:hover {
+    transform: rotate(-6deg);
+}
+
+
+/*................................................................................. Section 3.5 - Banner 2 - Covid-19 Travel Advice ...*/
+.banner-2 {
+	width: 100vw;
+	height: 20vh;
+	background-color: black;
+}
+
+.banner-2 h3 {
+	display: block;
+	text-align: center;
+	padding-top: 1rem;
+	color: white;
+}
+
+.banner-2 h3:after {
+	content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 10%; /* Change this to whatever width you want. */
+    padding-top: 5px; /* This creates some space between the element and the border. */
+    border-bottom: 5px solid red; /* This creates the border. Replace black with whatever color you want. */
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.banner-2 p {
+	text-align: center;
+	color: white;
+	font-size: 1rem;
+	margin-top: 0.5rem;
+	padding: 0 2rem;
+}
+
+/*........................................................................................................... Section 4 - Travel ...*/
+.four {
+	height: 100vh;
+	width: 100vw;
+}
+
+.four figure {
+	height: 100vh;
+	width: 50vw;
+	float: right;
+}
+		
+.four figure img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.four article {
+	background-color: white; 
+	float: left;
+	height: 100vh;
+	width: 50vw;
+}
+
+.four main {
+	height: 50%;
+	width: 100%;
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.four h2 {
+	color: black;
+	text-align: center;
+}
+
+.four h2:after {
+	content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 80%; /* Change this to whatever width you want. */
+    padding-top: 5px; /* This creates some space between the element and the border. */
+    border-bottom: 5px solid red; /* This creates the border. Replace black with whatever color you want. */
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.four p {
+	color: black;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	line-height: 2rem;
+	text-align: justify;
+	padding-top: 1rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;	
+	column-count: 2;
+	column-rule: 3px solid black;
+	column-gap: 2rem;
+}
+
+
+/*......................................................................................... Section 4.5 - Banner 3 - Oscar Wilde Quote ...*/
+.banner-3 {
+	width: 100vw;
+	height: 20vh;
+	background-color: red;
+}
+
+.banner-3 h3 {
+	display: block;
+	text-align: center;
+	padding-top: 1rem;
+	color: white;
+}
+
+.banner-3 h3:after {
+	content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 10%; /* Change this to whatever width you want. */
+    padding-top: 5px; /* This creates some space between the element and the border. */
+    border-bottom: 5px solid black; /* This creates the border. Replace black with whatever color you want. */
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.banner-3 p {
+	text-align: center;
+	color: white;
+	font-size: 1rem;
+	margin-top: 0.5rem;
+	padding: 0 2rem;
+}
+
+
+/*.................................................................................................................. Section 5 - Contact ...*/
+.five {
+	height: 100vh;
+	width: 100vw;
+}
+
+.five figure {
+	height: 100vh;
+	width: 50vw;
+	float: right;
+	background-color: black;
+}
+
+.five figure img {	
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.five main {
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.five h2 {
+	color: white;
+	text-align: center;
+}
+
+.five h2:after {
+	content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 80%; /* Change this to whatever width you want. */
+    padding-top: 5px; /* This creates some space between the element and the border. */
+	margin-bottom: 0.5rem;
+    border-bottom: 5px solid red; /* This creates the border. Replace black with whatever color you want. */
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.five p {
+	color: white;
+	padding-left: 1.5rem;
+}
+
+
+.four h2:after {
+	content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 80%; /* Change this to whatever width you want. */
+    padding-top: 5px; /* This creates some space between the element and the border. */
+    border-bottom: 5px solid red; /* This creates the border. Replace black with whatever color you want. */
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+/*... contact form ...*/
+.five form {
+    padding-top: 1.5rem;
+	padding-left: 1.5rem;
+	display: block;
+}
+
+
+.five input[type=text], select, textarea {
+    width: 80%;
+    box-sizing: border-box;
+    resize: vertical;
+    display: block;
+    color: black;
+	
+	padding: 1rem;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	margin: 1rem;
+
+}
+
+.five input[type=submit] {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: block;
+	
+	padding: 1rem;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    margin: 1rem;
+}
+
+.five input[type=submit]:hover {
+    background-color: black;
+    transition: 0.9s;
+}
+	
+
+/*.................................................................................................................. Section 6 - Footer ...*/
+footer {
+	width: 100vw;
+	height: 10vh;
+	background-color: red;
+}
+
+.social-media-list {
+	text-align: center;
+	padding-top: 0.5rem;
+	position: relative;
+}
+
+/*... Social Media Icons ...*/
+.fa {
+    font-size: 20px;
+    width: 50px;
+	height: 50px;
+	padding-top: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.fa-facebook {
+    background: black; 
+    color: white; 
+}
+
+.fa-facebook:hover {
+    background: #FFFFFF;
+    color: red;
+	transition: 0.5s;
+}
+
+.fa-twitter {
+    background: black; 
+    color: white; 
+}
+
+.fa-twitter:hover {
+    background: #FFFFFF;
+    color: red;
+	transition: 0.5s;
+}
+
+.fa-youtube {
+    background: black; 
+    color: white; 
+}
+
+.fa-youtube:hover {
+    background: #FFFFFF;
+    color: red;
+	transition: 0.5s;
+}
+
+.fa-instagram {
+    background: black; 
+    color: white; 
+}
+
+.fa-instagram:hover {
+    background: #FFFFFF;
+    color: red;
+	transition: 0.5s;
+}
+
+
+
+/*.............................................................................................................. Mobile Viewport....*/
+@media (max-width: 480px) {
+	
+	/*... Navigation Bar Styling ...*/	
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+		z-index: 9999;
+		background-color: black;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }	
+	
+	/*... Basic layout ...*/
+	figure {
+		height: 50vh;
+		width: 100vw;
+		clear: both;
+	}
+	
+	article {
+		height: 50vh;
+		width: 100vw;
+		clear: both;
+	}
+	
+	main {
+		height: 50vh;
+		width: 100vw;
+	}
+		
+	/*... Section 1 - Home ...*/
+	.one {
+		height: 100vh;
+		width: 100vw;
+		background: url("../images/section-1-home/homepage.jpg") no-repeat bottom right;
+		background-size: cover;
+	}
+	
+	.one img {
+		height: auto;
+	    width: 75vw;
+	    position: absolute;
+	    top: 25%;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    filter: drop-shadow(0 0 50px black);
+	    z-index: 9998;
+	}
+	.pattern {
+	    height: 100vh;
+	    width: 100vw;
+        background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAIElEQVQYV2NkYGD4zwABjFAazMAqCFMAp+FakGWwCgIAtpQCBqePTCIAAAAASUVORK5CYII=
+   ) repeat;
+	    z-index: 9997;
+    }
+	
+	/*... Explore Button ...*/
+    .explore {
+	    position: absolute;
+	    top: 70%;
+	    left: 50%;
+	    transform: translateX(-50%);
+		/*.. buttons appearance ..*/
+    	background-color: red;
+	    color: white;
+	    border: none;
+        outline: none;
+	    border-radius: 2px;
+	    height: 10%;
+	    width: 30%;
+	    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    }	
+	
+	/*... Section 2 - Places ...*/
+	.two {
+		height: 100vh;
+		width: 100vw;
+		margin: 0;
+	}
+	
+	.two figure {
+		background: url("../images/section-2-places/section-2-mobile.jpg") no-repeat bottom center;
+		background-size: cover;
+	}
+	
+	.two main {
+		width: 100vw;
+		height: 50vh;
+		border: none;		
+	}
+	
+	.two p {
+	    color: white;
+	    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		font-size: 0.75rem;
+	    line-height: 1.5rem;
+	    text-align: justify;
+	    padding-top: 1rem;
+	    padding-left: 1rem;
+	    padding-right: 1rem;		
+		column-count: auto;
+	    column-rule: none;	    
+    }
+	
+	.buttons {
+		display: none;
+	}	    
+	
+    .two figure img {
+        display: none;
+    }
+		
+	/*... Section 2.5 - Banner 1 - Join Our Mailing List ...*/
+	.banner-1 {
+		height: 20vh;
+		width: 100vw;
+		background-color: white;
+	}
+	
+	.banner-1 h3 {
+		display: block;
+		text-align: center;
+	}
+	
+	.banner-1 h3:after {
+	    content: ""; /* This is necessary for the pseudo element to work. */ 
+        display: block; /* This will put the pseudo element on its own line. */
+        margin: 0 auto; /* This will center the border. */
+        width: 5%; /* Change this to whatever width you want. */
+        padding-top: 5px; /* This creates some space between the element and the border. */
+        border-bottom: 5px solid red; /* This creates the border. Replace black with whatever color you want. */
+	    padding-left: 1rem;
+	    padding-right: 1rem;
+    }
+
+    .banner-1 form {
+	    display: block;
+	    text-align: center;
+	    margin-top: 1rem;
+    }
+
+    /* email text field */
+    input[type=text], input[type=submit] {
+        width: 35%;
+        padding: 1rem;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /* subscribe byutton */
+    input[type=submit] {
+        background-color: red;
+        color: white;
+        border: none;
+        margin-left: 0.5rem;
+        width: 35%;
+        display: inline-block;
+        font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    }
+
+    input[type=submit]:hover {
+        background-color: black;
+        transition: 0.5s;
+    }
+	
+    /*... Section 3 - Events ...*/
+.three {
+		background-color: red;
+	}	
+	.top {
+		height: 35vh;
+		width: auto;
+		display: block;
+	}
+	
+	.top img {
+		height: auto;
+		width: 100vw;
+		object-fit: cover;
+		filter: drop-shadow(0 0 50px black);
+		padding-top: 1.5rem;
+
+	}
+	
+	.bottom {
+		height: 65vh;
+		width: 100vw;
+	}
+	.polaroids {
+		display: none;
+	}
+	
+	.bottom {
+		padding: 1rem;
+	}
+	
+	.bottom h2 {
+	    color: white;
+	    text-align: center;
+    }
+
+    .bottom h2:after {
+	    content: ""; /* This is necessary for the pseudo element to work. */ 
+        display: block; /* This will put the pseudo element on its own line. */
+        margin: 0 auto; /* This will center the border. */
+        width: auto; /* Change this to whatever width you want. */
+        padding-top: 5px; /* This creates some space between the element and the border. */
+        border-bottom: 5px solid black; /* This creates the border. Replace black with whatever color you want. */
+	    padding-left: 1rem;
+	    padding-right: 1rem; 
+    }
+	
+	.bottom p  {
+	    color: white;
+	    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		font-size: 0.80rem;
+	    line-height: 1rem;
+	    text-align: justify;
+	    padding-top: 1rem;
+	    padding-left: 1rem;
+	    padding-right: 1rem;		
+		column-count: auto;
+	    column-rule: none;	    
+    }
+	
+	.bottom h2, p {
+	    color: white;
+	    column-count: auto;
+	}
+	
+    /*... Section 3.5 - Banner 2 - Covid-19 Travel Advice ...*/
+    .banner-2 p {
+	text-align: center;
+	color: white;
+	font-size: 0.65rem;
+	margin-top: 0.5rem;
+	padding: 0 1rem;
+    }	
+
+	/*... Section 4 - Travel ...*/ 
+    .four {
+	    height: 100vh;
+	    width: 100vw;
+    }
+	
+	.four figure {
+	    background-color: white;
+		text-align: center;
+		height: 40vh;
+		width: 100vw;
+		float: none;
+    }	
+	
+	.four figure img {
+		height: 80%;
+		width: 100%;
+		object-fit: cover;
+		position: relative;
+		margin: auto;
+	}
+
+    .four article {
+	    background-color: white; 
+		width: 100vw;
+		height: auto;
+		border: none;
+		float: none;
+    }	
+	
+	.four main {
+    	height: auto;
+	    width: 100vw;
+	    position: static;
+        top: 0;
+        transform: none;
+    }
+	
+	.four article  h2 {
+	    color: black;
+	    text-align: center;		
+    }
+	
+
+    .four article h2:after {
+	    content: ""; /* This is necessary for the pseudo element to work. */ 
+        display: block; /* This will put the pseudo element on its own line. */
+        margin: 0 auto; /* This will center the border. */
+        width: 80%; /* Change this to whatever width you want. */
+        padding-top: 5px; /* This creates some space between the element and the border. */
+        border-bottom: 5px solid red; /* This creates the border. Replace black with whatever color you want. */
+	    padding-left: 1rem;
+	    padding-right: 1rem; 
+    }
+	
+	.four article p  {
+	    color: black;
+	    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		font-size: 1rem;
+	    line-height: 1rem;
+	    text-align: justify;
+	    padding-top: 1rem;
+	    padding-left: 1rem;
+	    padding-right: 1rem;		
+		column-count: auto;
+	    column-rule: none;	    
+    }       
+	
+	/*... Section 4.5 - Banner 3 - Oscar Wilde Quote ...*/
+    .banner-3 {
+	    width: 100vw;
+		height: 20vh;
+		background-color: red;
+	}
+	.banner-3 h3 {
+		display: block;
+	    text-align: center;
+	    padding-top: 1rem;
+	    color: white;
+	}
+	
+	.banner-3 h3:after {
+	content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 10%; /* Change this to whatever width you want. */
+    padding-top: 5px; /* This creates some space between the element and the border. */
+    border-bottom: 5px solid black; /* This creates the border. Replace black with whatever color you want. */
+	padding-left: 1rem;
+	padding-right: 1rem;
+    }
+	
+	.banner-3 p {
+	text-align: center;
+	color: white;
+	font-size: 0.85rem;
+	margin-top: 0.5rem;
+	padding: 0 2rem;
+    }
+	
+    /*... Section 5 - Contact ...*/
+    .five {
+	    height: 100vh;
+	    width: 100vw;
+	}
+	
+	.five article {
+		height: 100vh;
+		width: 100vw;
+		background-color: black;
+	}
+	
+    .five h2 {
+		display: block;
+	    text-align: center;
+	    padding-top: 1rem;
+	    color: white;
+	}
+	
+	.five h2:after {
+	    content: ""; /* This is necessary for the pseudo element to work. */ 
+        display: block; /* This will put the pseudo element on its own line. */
+        margin: 0 auto; /* This will center the border. */
+        width: 80%; /* Change this to whatever width you want. */
+        padding-top: 5px; /* This creates some space between the element and the border. */
+        border-bottom: 5px solid red; /* This creates the border. Replace black with whatever color you want. */
+	    padding-left: 1rem;
+	    padding-right: 1rem;
+    }
+	
+	.five p {
+		text-align: justify;
+		padding: 2rem;
+	    color: white;		
+	}
+	
+	/*... contact form ...*/
+    .five form {
+    padding: 2rem;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+    }
+
+    .five input[type=text], select, textarea {
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    resize: vertical;
+    display: block;
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 15px; 
+    padding-left: 5px;
+    }
+
+    .five input[type=submit] {
+    background-color: #e91a33;
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    display: block;
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    }
+
+    .five input[type=submit]:hover {
+    background-color: black;
+    transition: 0.9s;
+    }
+	
+	.five figure {
+		display: none;
+	}
+	
+	/*... Section 6 - Footer ...*/
+    footer {
+	width: 100vw;
+	height: 10vh;
+	background-color: red;
+    }
+	
+	.social-media-list {
+	text-align: center;
+	padding-top: 0.5rem;
+	position: relative;
+    }
+	
+}
